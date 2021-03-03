@@ -1,0 +1,95 @@
+<div class="body"></div>
+<div class="menuBar">
+<ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link" href="app-user">
+        <span class="badge badge-secondary">
+            Your Resume
+        </span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " href="app-personal-details">
+        <span class="badge badge-secondary">  
+        Personal Information</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="app-edu-details">
+        <span class="badge badge-secondary">Educational Details</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="app-experience">
+        <span class="badge badge-secondary">Experience</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" >
+        <span class="badge badge-secondary">Other</span></a>
+    </li>
+    <li  class="nav-item">
+    
+    </li>
+  </ul>
+</div>
+<div class = "logout">
+
+    <form  (ngSubmit)="doLogout()">
+             <input type="submit" value="LOGOUT" class="btn btn-danger btn-sm" >
+    </form>
+
+</div>
+<div class="verticalLine"></div>
+<div class="topRightCorner">
+  <div class="header1">
+    <div><u>Resume<span>Builder</span></u></div>
+  </div>
+</div>
+
+<div class="login2">
+  <form [formGroup]="otherDetForm" (ngSubmit)="fillOtherDet(otherDetForm.value)">
+    <table>
+      <tr>
+        <td>
+          <div class="stgClass">Technical Proficiency:</div><br>
+          <input type= "text"  name="skillSet" placeholder="{{this.record.skills}}" 
+          formControlName = "skillSet"><br>
+        </td>
+        <td width="100"></td>        <td></td>
+        </tr>
+
+        <tr>
+          <td></td>                <td width="100"></td>
+          <td>
+
+            <div class="stgClass">Languages Known:</div><br>
+            <input type= "text"  name="languages" placeholder="{{this.record.languages}}" 
+            formControlName = "languages"><br>
+          </td>
+        </tr>
+        <tr>
+          <td> 
+            <div class="stgClass">Hobbies:</div><br>
+            <input type= "text"  name="hobbies" placeholder="{{this.record.hobbies}}" 
+            formControlName = "hobbies"><br>
+          </td>
+          <td width="100"></td>        <td></td>
+          </tr>
+          <tr>
+            <td></td>                <td width="100"></td>
+            <td align="center">
+  
+              <input type="submit" value="update" class="btn btn-secondary  btn-sm">
+            </td>
+          </tr>
+
+
+    </table>
+
+
+
+
+  
+    </form>
+
+    <div *ngIf="this.isSave" class="alert alert-success box-msg " role="alert">
+      Your Personal Details Updated Successfully ! 
+       </div>
+</div>

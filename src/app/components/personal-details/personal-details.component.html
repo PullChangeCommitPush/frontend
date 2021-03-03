@@ -1,0 +1,102 @@
+<div class="body"></div>
+<div class="menuBar">
+<ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link" href="app-user">
+        <span class="badge badge-secondary">
+            Your Resume
+        </span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active">
+        <span class="badge badge-secondary">  
+        Personal Information</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="app-edu-details">
+        <span class="badge badge-secondary">Educational Details</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="app-experience">
+        <span class="badge badge-secondary">Experience</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="app-other-det">
+        <span class="badge badge-secondary">Other</span></a>
+    </li>
+    <li  class="nav-item">
+    
+    </li>
+  </ul>
+</div>
+<div class = "logout">
+
+    <form  (ngSubmit)="doLogout()">
+             <input type="submit" value="LOGOUT" class="btn btn-danger btn-sm" >
+    </form>
+
+</div>
+<div class="verticalLine"></div>
+<div class="topRightCorner">
+  <div class="header1">
+    <div><u>Resume<span>Builder</span></u></div>
+  </div>
+</div>
+
+<div class="login1">
+
+  <div>
+     
+    <form [formGroup]="personalDetForm" (ngSubmit)="fillPersonalDet(personalDetForm.value)">
+      <table>
+          <tr>
+            <td><div class="stgClass">First Name:</div></td>
+            <td>
+           <input type= "text"  name="firstName" placeholder="{{this.record.personalDet?.firstName}}" 
+          formControlName = "firstName">
+          </td></tr>
+          <tr><td> &nbsp; </td></tr>
+          <tr>
+            <td><div class="stgClass">Last Name:</div></td>
+            <td>
+          <input type= "text"  name="lastName" placeholder="{{this.record.personalDet?.lastName}}" 
+          formControlName = "lastName">
+        </td></tr>
+        <tr><td> &nbsp; </td></tr>
+        <tr>
+          <td><div class="stgClass">Address:</div></td>
+          <td>
+          <input type= "text"  name="address" placeholder="{{this.record.personalDet?.address}}" 
+          formControlName = "address"></td></tr>
+          <tr><td> &nbsp; </td></tr>
+          <tr>
+          <td><div class="stgClass">Phone Number:</div></td>
+          <td>
+          <input type= "text"  name="phone" placeholder="{{this.record.personalDet?.phone}}" 
+          formControlName = "phone"><br/></td></tr>
+          <tr><td> &nbsp; </td></tr>
+          <tr>
+            <td><div class="stgClass">email Id:</div></td>
+            <td>
+          <input type= "text"  name="emailId" placeholder="emailId" 
+          formControlName = "emailId"></td></tr>
+          <tr><td> &nbsp; </td></tr>
+          <tr>
+            <td><div class="stgClass">linkedIn Profile:</div></td>
+            <td>
+          <input type= "text"  name="linkedInProfile" placeholder="{{this.record.personalDet?.linkedInProfile}}" 
+          formControlName = "linkedInProfile"></td></tr>
+          <tr><td> &nbsp; </td></tr>
+          <tr>
+            <td></td><td>
+          <input type="submit" value="update" class="btn btn-secondary  btn-sm">
+          </td></tr>
+          <tr><td>&nbsp;</td></tr>
+          <tr>            
+            <td colspan="2"><div *ngIf="this.isSave" class="alert alert-success box-msg " role="alert">
+           Your Personal Details Updated Successfully ! 
+            </div></td></tr>
+        </table>
+    </form>
+  </div>
+</div>

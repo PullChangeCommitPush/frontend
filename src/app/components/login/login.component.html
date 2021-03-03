@@ -1,0 +1,25 @@
+<div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>Resume<span>Builder</span></div>
+		</div>
+		<br>
+		<div class="login">
+
+			<div>
+                <form [formGroup]="loginForm" (ngSubmit)="doLogin(loginForm.value)">
+                    <div>
+                        <input type= "text"  name="email_Id" placeholder="userName" 
+                     formControlName = "email_Id"> 
+                  <br/>
+                  <input type= "password"  name="password" placeholder="password" 
+                     formControlName = "password"> 
+                  <br/><br/>
+                        <input type="submit" value="LOGIN" class="btn btn-secondary">
+                       
+                    </div>
+                </form>
+            </div>
+                
+		</div>
+

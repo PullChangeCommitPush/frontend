@@ -1,0 +1,78 @@
+<div class="body"></div>
+<div class="menuBar">
+<ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link active">
+        <span class="badge badge-secondary">
+            Your Resume
+        </span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="app-personal-details">
+        <span class="badge badge-secondary">  
+        Personal Information</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="app-edu-details">
+        <span class="badge badge-secondary">Educational Details</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="app-experience">
+        <span class="badge badge-secondary">Experience</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="app-other-det">
+        <span class="badge badge-secondary">Other</span></a>
+    </li>
+    <li  class="nav-item">
+    
+    </li>
+  </ul>
+</div>
+<div class = "logout">
+
+    <form  (ngSubmit)="doLogout()">
+             <input type="submit" value="LOGOUT" class="btn btn-danger btn-sm" >
+    </form>
+
+</div>
+<div class="verticalLine"></div>
+<div class="topRightCorner">
+  <div class="header1">
+    <div><u>Resume<span>Builder</span></u></div>
+  </div>
+</div>
+
+<div class="login">
+
+<table>
+    <tr *ngFor="let usr of this.userService.users">
+        <td>{{usr._id}}</td>
+        <td>{{usr.firstName}}</td>
+        <td>
+        <ng-template [ngIf]="this.usr.fullName">
+            <div>
+                <td>{{this.usr.fullName.firstName}}</td>
+                <td>{{this.usr.fullName.lastName}}</td>
+            </div>
+          </ng-template> 
+        </td>
+         <td>
+            <!-- <ng-template [ngIf]="this.usr.educationDet">
+                <div>
+                    <div>{{this.usr.educationDet.junorCLG.junorCLGDegree}}</div>
+                    <div>
+                        <ng-template [ngIf]="this.usr.educationDet.postG">
+                            <div>{{this.usr.educationDet.postG.postGDegree}}</div>
+                        </ng-template>
+                    </div>
+                </div>
+              </ng-template>  -->
+            </td> 
+        
+
+    </tr>
+
+</table>
+
+</div>

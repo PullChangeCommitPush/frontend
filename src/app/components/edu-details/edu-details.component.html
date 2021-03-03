@@ -1,0 +1,141 @@
+<div class="body"></div>
+<div class="menuBar">
+<ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link" href="app-user">
+        <span class="badge badge-secondary">
+            Your Resume
+        </span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " href="app-personal-details">
+        <span class="badge badge-secondary">  
+        Personal Information</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active">
+        <span class="badge badge-secondary">Educational Details</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="app-experience">
+        <span class="badge badge-secondary">Experience</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="app-other-det">
+        <span class="badge badge-secondary">Other</span></a>
+    </li>
+    <li  class="nav-item">
+    
+    </li>
+  </ul>
+</div>
+<div class = "logout">
+
+    <form  (ngSubmit)="doLogout()">
+             <input type="submit" value="LOGOUT" class="btn btn-danger btn-sm" >
+    </form>
+
+</div>
+<div class="verticalLine"></div>
+<div class="topRightCorner">
+  <div class="header1">
+    <div><u>Resume<span>Builder</span></u></div>
+  </div>
+</div>
+
+<div class="login2">    
+    <form [formGroup]="educationalDetForm" (ngSubmit)="fillEducationalDet(educationalDetForm.value)">
+      <table>
+        <tr>
+          <td></td><td>&nbsp;</td>
+          <th><h3>Junior College</h3></th><td>&nbsp;</td>
+          <th><h3>Bachelor's Degree</h3></th><td>&nbsp;</td>
+          <th><h3>Master's Degree</h3></th>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+
+
+        <tr>
+            <td><div class="stgClass">Degree</div></td><td><div class="stgClass">:</div></td>
+            <td>
+              <input type= "text"  name="jrCLGDegree" placeholder="{{this.record.educationDet?.jrCLGDegree}}" 
+                formControlName = "jrCLGDegree">
+            </td><td>&nbsp;</td>
+            <td>
+              <input type= "text"  name="bachDDegree" placeholder="{{this.record.educationDet?.bachDDegree}}" 
+                formControlName = "bachDDegree">
+              </td><td>&nbsp;</td>
+            <td>
+              <input type= "text"  name="postGDegree" placeholder="{{this.record.educationDet?.postGDegree}}" 
+              formControlName = "postGDegree">
+            </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+          <td><div class="stgClass">College Name</div></td><td><div class="stgClass">:</div></td>
+          <td>
+            <input type= "text"  name="jrCLGName" placeholder="{{this.record.educationDet?.jrCLGName}}" 
+              formControlName = "jrCLGName">
+          </td><td>&nbsp;</td>
+          <td>
+            <input type= "text"  name="bachDName" placeholder="{{this.record.educationDet?.bachDName}}" 
+              formControlName = "bachDName">
+            </td><td>&nbsp;</td>
+          <td>
+            <input type= "text"  name="postGName" placeholder="{{this.record.educationDet?.postGName}}" 
+            formControlName = "postGName">
+          </td>
+       </tr>
+       <tr><td>&nbsp;</td></tr>
+       <tr>
+        <td><div class="stgClass">Time Period</div></td><td><div class="stgClass">:</div></td>
+        <td>
+          <input type= "text"  name="jrCLGYear" placeholder="{{this.record.educationDet?.jrCLGYear}}" 
+            formControlName = "jrCLGYear">
+        </td><td>&nbsp;</td>
+        <td>
+          <input type= "text"  name="bachDYear" placeholder="{{this.record.educationDet?.bachDYear}}" 
+            formControlName = "bachDYear">
+          </td><td>&nbsp;</td>
+        <td>
+          <input type= "text"  name="postGYear" placeholder="{{this.record.educationDet?.postGYear}}" 
+          formControlName = "postGYear">
+        </td>
+     </tr>
+     <tr><td>&nbsp;</td></tr>
+     <tr>
+      <td><div class="stgClass">Grade/Percentage</div></td><td><div class="stgClass">:</div></td>
+      <td>
+        <input type= "text"  name="jrCLGGrade" placeholder="{{this.record.educationDet?.jrCLGGrade}}" 
+          formControlName = "jrCLGGrade">
+      </td><td>&nbsp;</td>
+      <td>
+        <input type= "text"  name="bachDGrade" placeholder="{{this.record.educationDet?.bachDGrade}}" 
+          formControlName = "bachDGrade">
+        </td><td>&nbsp;</td>
+      <td>
+        <input type= "text"  name="postGGrade" placeholder="{{this.record.educationDet?.postGGrade}}" 
+        formControlName = "postGGrade">
+      </td>
+   </tr>
+   <tr><td>&nbsp;</td></tr>
+
+   <tr>            
+    <td colspan="7"><div> 
+      <input  type="submit" value="update" class="btn btn-secondary btn-sm center-block">
+    </div></td></tr>
+
+          <tr><td>&nbsp;</td></tr>
+          <tr> 
+            <td  colspan="6"></td>          
+            <td>
+              <div *ngIf="this.isSave" class="alert alert-success box-msg " role="alert">
+              Your Educational Details Updated Successfully ! 
+            </div></td></tr>
+
+
+
+
+        </table>
+    </form>
+</div>

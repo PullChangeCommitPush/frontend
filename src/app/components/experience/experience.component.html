@@ -1,0 +1,131 @@
+
+
+<div class="body"></div>
+<div class="menuBar">
+<ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link" href="app-user">
+        <span class="badge badge-secondary">
+            Your Resume
+        </span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " href="app-personal-details">
+        <span class="badge badge-secondary">  
+        Personal Information</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="app-edu-details">
+        <span class="badge badge-secondary">Educational Details</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active">
+        <span class="badge badge-secondary">Experience</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="app-other-det">
+        <span class="badge badge-secondary">Other</span></a>
+    </li>
+    <li  class="nav-item">
+    
+    </li>
+  </ul>
+</div>
+<div class = "logout">
+
+    <form  (ngSubmit)="doLogout()">
+             <input type="submit" value="LOGOUT" class="btn btn-danger btn-sm" >
+    </form>
+
+</div>
+<div class="verticalLine"></div>
+<div class="topRightCorner">
+  <div class="header1">
+    <div><u>Resume<span>Builder</span></u></div>
+  </div>
+</div>
+
+<div class="login2">
+  <table>
+    <tr>
+      <td><div class="stgClass">Experience 1</div></td>
+      <td width="400"></td>
+      <td ><div class="stgClass">Experience 2</div></td>
+    </tr>
+    </table><br><br>
+  <form [formGroup]="experienceDetForm" (ngSubmit)="fillExperienceDet(experienceDetForm.value)">
+    <table>
+
+      <tr>
+        <td>
+          <div class="stgClass">Period:</div>
+        </td>
+        <td>
+          <input type= "text"  name="totalExp" placeholder="{{this.record.experience0?.year}}" 
+            formControlName = "totalExp">
+        </td><td>&nbsp;</td>
+        <td>
+          <div class="stgClass">Period:</div>
+        </td>
+        <td>
+          <input type= "text"  name="totalExp1" placeholder="{{this.record.experience1?.year}}" 
+            formControlName = "totalExp1">
+        </td>
+      </tr>
+      <tr><td><br></td></tr>
+      <tr>
+        <td>
+          <div class="stgClass">Company Name:</div>
+        </td>
+        <td>
+          <input type= "text"  name="projectName" placeholder="{{this.record.experience0?.projectName}}" 
+            formControlName = "projectName">
+          </td><td>&nbsp;</td>
+          <td>
+            <div class="stgClass">Company Name:</div>
+          </td>
+          <td>
+            <input type= "text"  name="projectName1" placeholder="{{this.record.experience1?.projectName}}" 
+              formControlName = "projectName1">
+            </td>
+      </tr>
+      <tr><td><br></td></tr>
+      <tr>
+        <td>
+          <div class="stgClass">Decribe Project:</div>
+          </td>
+          <td>
+            <textarea  name="projectDesc" placeholder="{{this.record.experience0?.projectDesc}}" 
+            formControlName = "projectDesc">
+            </textarea>
+            </td><td>&nbsp;</td>
+            <td>
+              <div class="stgClass">Decribe Project:</div>
+              </td>
+              <td>
+                <textarea  name="projectDesc1" placeholder="{{this.record.experience1?.projectDesc}}" 
+                formControlName = "projectDesc1">
+                </textarea>
+                </td>
+        </tr>
+        <tr><td><br><br><br></td></tr>
+        <tr>
+          <td></td>           <td></td> 
+          <td> <input type="submit" value="update" class="btn btn-secondary  btn-sm">
+          </td>
+        </tr>      
+      </table>
+      <table>
+        <tr>
+          <td width="750"></td>          
+            <td ><div *ngIf="this.isSave" class="alert alert-success box-msg " role="alert">
+           Your Personal Details Updated Successfully ! 
+            </div></td>
+
+
+
+        </tr>
+        </table>
+
+  </form>
+ </div>
